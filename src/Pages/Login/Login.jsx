@@ -50,7 +50,7 @@ export default function Login() {
                 name="email"
                 placeholder="Email"
                 required
-                className="w-full h-12 outline-none bg-slate-200 px-4 text-black rounded"
+                className="w-full h-12 outline-none placeholder-black bg-slate-200 px-4 text-black rounded"
               />
             </div>
             <div className="w-full rounded-2xl">
@@ -59,7 +59,7 @@ export default function Login() {
                 name="password"
                 placeholder="Password"
                 required
-                className="w-full h-12 outline-none bg-slate-200 px-4 text-black rounded"
+                className="w-full h-12 outline-none placeholder-black bg-slate-200 px-4 text-black rounded"
               />
             </div>
             <div className="flex justify-end py-6 ">

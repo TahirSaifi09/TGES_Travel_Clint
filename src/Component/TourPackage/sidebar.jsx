@@ -256,13 +256,13 @@ export default function SideBar() {
           <div className="flex shadow-lg gap-8 p-6 rounded-3xl bg-white">
             <div className="flex gap-8">
               <img
-                src="Taj mahal1.jpg"
-                alt="taj mahal"
+                src="Canada.jpg"
+                alt="Canada"
                 className="w-2/5 rounded-xl "
               ></img>
               <div>
                 <p className="text-2xl font-medium">
-                  Taj Mahal First Time Visiting
+                  Canada First Time Visiting
                 </p>
                 <div className="flex gap-3 mt-4 items-center">
                   <CiLocationOn className="text-3xl" />
@@ -486,12 +486,12 @@ export default function SideBar() {
           <div className="flex shadow-lg gap-8 p-6 my-6 rounded-3xl bg-white">
             <div className="flex gap-8">
               <img
-                src="Madhya Pradesh.jpg"
-                alt="Madhya Pradesh"
+                src="Dubai.jpeg"
+                alt="Dubai"
                 className="w-2/5 rounded-xl "
               ></img>
               <div>
-                <p className="text-2xl font-medium">Madhya Pradesh</p>
+                <p className="text-2xl font-medium">Dubai</p>
                 <div className="flex gap-3 mt-4 items-center">
                   <CiLocationOn className="text-3xl" />
                   <div>

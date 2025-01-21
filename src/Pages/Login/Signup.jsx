@@ -52,7 +52,7 @@ export default function Signup() {
                 type="text"
                 name="name"
                 placeholder="First Name"
-                className="w-full h-12 outline-none bg-slate-200 px-4 text-black rounded"
+                className="w-full h-12 outline-none placeholder-black bg-slate-200 px-4 text-black rounded"
               />
             </div>
             <div className="w-1/2 max-sm:w-full pl-4 max-sm:pl-0 py-6 max-sm:py-2 max-lg:py-4 rounded-2xl">
@@ -61,7 +61,7 @@ export default function Signup() {
                 name="email"
                 placeholder="Email"
                 required
-                className="w-full h-12 outline-none bg-slate-200 px-4 text-black rounded"
+                className="w-full h-12 outline-none placeholder-black bg-slate-200 px-4 text-black rounded"
               />
             </div>
             <div className="w-1/2 pr-4 max-sm:pr-0 max-sm:w-full max-sm:py-2 rounded-2xl">
@@ -70,7 +70,7 @@ export default function Signup() {
                 name="password"
                 placeholder="Password"
                 required
-                className="w-full h-12 outline-none bg-slate-200 px-4 text-black rounded"
+                className="w-full h-12 outline-none placeholder-black bg-slate-200 px-4 text-black rounded"
               />
             </div>
             <div className="w-1/2 max-sm:w-full pl-4 max-sm:pl-0 max-sm:py-2 rounded-2xl">
@@ -78,12 +78,12 @@ export default function Signup() {
                 type="tel"
                 name="phone"
                 placeholder="Phone"
-                className="w-full h-12 outline-none bg-slate-200 px-4 text-black rounded"
+                className="w-full h-12 outline-none placeholder-black bg-slate-200 px-4 text-black rounded"
               />
             </div>
             <div className="w-1/2 max-sm:w-full max-sm:pr-0 mt-6 h-12 pr-4 ">
               <select className="w-full outline-none bg-slate-200 px-4 text-black rounded h-full">
-                <option>Language</option>
+                <option selected disabled>Language</option>
                 <option>English</option>
               </select>
             </div>

@@ -5,6 +5,7 @@ import { useState } from "react";
 
 export default function Navbar() {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
   const links = [
     {
@@ -13,10 +14,10 @@ export default function Navbar() {
     },
 
     {
-      name: "Page",
+      name: "Flight",
       path: null,
       isDropDown: true,
-      item: [
+      items: [
         {
           name: "Flight Listing",
           path: "/flight-listing",
@@ -31,7 +32,7 @@ export default function Navbar() {
       name: "Car",
       path: null,
       isDropDown: true,
-      item: [
+      items: [
         {
           name: "Car Listing",
           path: null,
@@ -50,7 +51,7 @@ export default function Navbar() {
       name: "Hotel",
       path: null,
       isDropDown: true,
-      item: [
+      items: [
         {
           name: "Hotel Listing",
           path: null,
@@ -69,7 +70,7 @@ export default function Navbar() {
       name: "Pages",
       path: null,
       isDropDown: true,
-      item: [
+      items: [
         {
           name: "Contact",
           path: "/contact",
@@ -84,7 +85,7 @@ export default function Navbar() {
         },
         {
           name: "Signup",
-          path: "signup",
+          path: "/signup",
         },
       ],
     },
@@ -92,6 +93,16 @@ export default function Navbar() {
 
   function handleDropDown() {
     setIsDropDownOpen(!isDropDownOpen);
+  }
+
+  function handleMouseEnter(index) {
+    setIsDropDownOpen(true);
+    setActiveDropdown(index);
+  }
+
+  function handleMouseLeave() {
+    setIsDropDownOpen(false);
+    setActiveDropdown(null);
   }
   const location = useLocation();
   // console.log("location", location)
@@ -105,29 +116,56 @@ export default function Navbar() {
         <IoReorderThreeOutline className="text-blue-600 text-5xl max-md:text-4xl xl:hidden" />
       </div>
       <div className="flex justify-between w-full text-lg font-medium max-xl:hidden">
-        <div className="flex gap-10 py-5">
-          {links.map((item) => (
+        <div className="flex gap-2 py-5 ">
+          {links.map((item, index) => (
             // <Link to={item.path}>{item.name}</Link>
-            <>
+            <div
+              key={index}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+              className="relative"
+            >
               <Link
                 to={item.path}
-                className={
-                  location.pathname === "/"
+                className={`py-4 px-6 ${
+                  location.pathname === item.path
                     ? "text-blue-600"
                     : "hover:text-blue-600"
-                }
+                }`}
               >
                 {item.name}
               </Link>
 
-              {item?.isDropDown &&
-                isDropDownOpen &&
-                item.item.map((dropDownItem, index) => (
-                  <Link key={index} to={dropDownItem.path}>
-                    {dropDownItem.name}
-                  </Link>
-                ))}
-            </>
+              {/* {isDropDownOpen &&
+                activeDropdown === index &&
+                item.isDropDown &&
+                item.items.map((dropDownItem, index) => (
+                  <div className="flex absolute -right-24 top-10 flex-col px-8 py-3 gap-4 rounded-md bg-white transition-all delay-200 duration-300 ease-in-out">
+                    <Link key={index} to={dropDownItem.path} className="">
+                      {dropDownItem.name}
+                      {console.log(dropDownItem.name)}
+                    </Link>
+                  </div>
+                ))} */}
+
+              {isDropDownOpen &&
+                activeDropdown === index &&
+                item.isDropDown && (
+                  <div className="flex absolute shadow-lg top-10 flex-col px-8 py-4 w-[200px] gap-4 rounded-md bg-white transition-all delay-200 duration-300 ease-in-out">
+                    <ul>
+                      {
+                        item.items.map((subItem, index) => (
+                          <li key={index} className=" py-2">
+                            <Link  to={subItem.path} className="p-2 ">
+                              {subItem.name}
+                            </Link>
+                          </li>
+                        ))
+                      }
+                    </ul>
+                  </div>
+                )}
+            </div>
           ))}
 
           {/* <div>

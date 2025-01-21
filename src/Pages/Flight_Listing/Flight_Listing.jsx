@@ -5,8 +5,19 @@ import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
+import {useState} from "react"
 
 export default function Flight_Listing() {
+
+  // const [isButtonOpen, setIsButtonOpen]=useState(false);
+
+  // function handleMouseEnter(){
+  //   setIsButtonOpen(true);
+  // }
+  // function handleMouseLeave(){
+
+  // }
+
   return (
     <div>
       <Navbar />
@@ -83,7 +94,7 @@ export default function Flight_Listing() {
                       <input
                         type="text"
                         placeholder="From"
-                        className="outline-none bg-slate-200 text-gray-500 text-xl max-md:w-5/12 max-sm:w-full"
+                        className="outline-none bg-slate-200 placeholder:text-gray-500 text-xl max-md:w-5/12 max-sm:w-full"
                       ></input>
                     </div>
                   </div>
@@ -96,7 +107,7 @@ export default function Flight_Listing() {
                       <input
                         type="text"
                         placeholder="To"
-                        className="outline-none bg-slate-200 text-gray-500 text-xl max-sm:w-full "
+                        className="outline-none bg-slate-200 placeholder:text-gray-500 text-xl max-sm:w-full "
                       ></input>
                     </div>
                   </div>
