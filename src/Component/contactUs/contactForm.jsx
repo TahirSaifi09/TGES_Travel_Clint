@@ -1,3 +1,5 @@
+/** @format */
+
 export default function contactForm() {
   return (
     <div className=" h-full bg-slate-50 ">
@@ -55,7 +57,7 @@ export default function contactForm() {
               value="Send Message"
               className="bg-blue-600 text-white px-6 py-3 rounded-xl mt-8 shadow-lg hover:text-black hover:bg-white duration-700 font-medium "
             />
-            </div>
+          </div>
         </div>
       </form>
     </div>
