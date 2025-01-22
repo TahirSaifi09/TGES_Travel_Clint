@@ -9,14 +9,16 @@ import {useState} from "react"
 
 export default function Flight_Listing() {
 
-  // const [isButtonOpen, setIsButtonOpen]=useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
-  // function handleMouseEnter(){
-  //   setIsButtonOpen(true);
-  // }
-  // function handleMouseLeave(){
-
-  // }
+  function handleMouseEnter(){
+    if(isOpen)
+      setIsOpen(false);
+    else
+    setIsOpen(true);
+    console.log("Value : ", isOpen);
+    
+  }
 
   return (
     <div>
@@ -176,9 +178,11 @@ export default function Flight_Listing() {
               <div className="py-2">
                 <div className="flex justify-between text-2xl font-medium p-6">
                   <p>Cabin</p>
-                  <IoIosArrowUp className="text-blue-400" />
+                  <button onClick={handleMouseEnter} className="rotate-180">
+                    <IoIosArrowUp className="text-blue-400" />
+                  </button>
                 </div>
-                <div className="flex flex-wrap px-6 gap-10">
+                <div className={`flex-wrap px-6 gap-10 ${isOpen ? "flex" : "hidden"}`}>
                   <button className="w-5/12 px-8  bg-blue-600 text-2xl text-white border rounded border-black">
                     Economy Class
                   </button>
